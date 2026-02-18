@@ -167,28 +167,6 @@ The architecture supports modular expansion.
 
 ---
 
-## 🛠️ Installation & Setup
-
-1. Clone Repository
-
-git clone https://github.com/yourusername/Defendrix.git
-cd Defendrix
-
-2. Install Dependencies
-
-pip install -r requirements.txt
-
-3. Set VirusTotal API Key (Optional)
-
-Linux / Mac:
-export VT_API_KEY=your_api_key_here
-
-Windows:
-set VT_API_KEY=your_api_key_here
-
-4. Run Application
-
-python main.py
 
 ---
 
