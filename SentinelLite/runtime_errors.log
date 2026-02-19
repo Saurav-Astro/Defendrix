@@ -1,0 +1,17 @@
+2026-02-19 18:17:43,269 ERROR Unhandled exception
+Traceback (most recent call last):
+  File "C:\Users\0501s\OneDrive\Desktop\1_Hackthon\1_Hackthon\code\Defendrix\Defendrix\Defendrix.py", line 63, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\0501s\OneDrive\Desktop\1_Hackthon\1_Hackthon\code\Defendrix\Defendrix\Defendrix.py", line 51, in main
+    window = VulnerabilityScanner()
+  File "C:\Users\0501s\OneDrive\Desktop\1_Hackthon\1_Hackthon\code\Defendrix\SentinelLite\gui\app.py", line 362, in __init__
+    self.setup_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\0501s\OneDrive\Desktop\1_Hackthon\1_Hackthon\code\Defendrix\SentinelLite\gui\app.py", line 396, in setup_ui
+    self.tab_widget.addTab(self.create_bruteforce_tab(), "\U0001f489 Payload Injection")
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\0501s\OneDrive\Desktop\1_Hackthon\1_Hackthon\code\Defendrix\SentinelLite\gui\app.py", line 567, in create_bruteforce_tab
+    separator_frame = QFrame()
+                      ^^^^^^
+NameError: name 'QFrame' is not defined
