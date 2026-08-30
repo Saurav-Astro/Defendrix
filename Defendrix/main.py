@@ -5,13 +5,10 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-from PySide6.QtWidgets import QApplication
-
 repo_root = Path(__file__).resolve().parents[1]
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
-from SentinelLite.gui.app import VulnerabilityScanner
 from SentinelLite.utils.error_handler import setup_global_exception_handler
 from SentinelLite.engine.scanner_engine import ScannerEngine
 from SentinelLite.reporting.report_generator import ReportGenerator
@@ -113,6 +110,9 @@ if __name__ == "__main__":
         print("Error: --target is required when running in --headless mode.")
         sys.exit(1)
     else:
+        from PySide6.QtWidgets import QApplication
+        from SentinelLite.gui.app import VulnerabilityScanner
+        
         app = QApplication([])
         window = VulnerabilityScanner()
         window.show()
