@@ -21,22 +21,23 @@ def setup_json_logger():
     logger = logging.getLogger("Defendrix")
     logger.setLevel(logging.INFO)
     
-    class JsonFormatter(logging.Formatter):
-        def format(self, record):
-            log_record = {
-                "timestamp": self.formatTime(record, self.datefmt),
-                "level": record.levelname,
-                "message": record.getMessage()
-            }
-            return json.dumps(log_record)
-            
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setFormatter(JsonFormatter())
-    logger.addHandler(file_handler)
-    
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(JsonFormatter())
-    logger.addHandler(console_handler)
+    if not logger.handlers:
+        class JsonFormatter(logging.Formatter):
+            def format(self, record):
+                log_record = {
+                    "timestamp": self.formatTime(record, self.datefmt),
+                    "level": record.levelname,
+                    "message": record.getMessage()
+                }
+                return json.dumps(log_record)
+                
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setFormatter(JsonFormatter())
+        logger.addHandler(file_handler)
+        
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(JsonFormatter())
+        logger.addHandler(console_handler)
     
     return logger
 
